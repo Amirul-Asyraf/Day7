@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Data Type</title>
+        <style>
+            #hpbar {
+                width: 0px;
+                height: 100px;
+                margin: 10px 0;
+                background-color: yellowgreen;
+
+                transition: all 0.7s;
+            }
+        </style>
+        <script>
+            //do javascript here
+            var apple = 5;
+            var orange = 7;
+
+
+            var banana = 10, berry = 5, bananaType = "berry";
+
+            var iphone = 100;
+            var iwatch = "50";
+
+            console.log(iphone + iwatch); // output will be converted to string - 10050
+
+            //output/print
+            console.log(apple + orange);
+            // console.debug(apple + orange)
+
+            //output with note
+            //string + variable
+            console.log("My name is", bananaType)
+
+            //output calculations
+            console.log(1 + 1 * 5)
+
+            //target the #para
+            document.getElementById('para').innerHTML = "Hello World! This is in head.";
+
+            function init() {
+                //target the #para
+            document.getElementById('para').innerHTML = "Hello World! I'm from init().";
+            }
+        </script>
+    </head>
+    <body onload="init()">
+        <div></div>
+        <p id="para"></p>
+        <h1 id="score"></h1>
+
+        <button onclick="count(-10, 'red')">-</button>
+        <button onclick="count(10, 'green')">+</button>
+
+        <div id="hpbar">
+
+        </div>
+        
+        <script>
+            var scoreText = document.getElementById("score");
+            var paraText = document.getElementById("para");
+            var score = 0
+            var hpBar = document.getElementById("hpbar");
+
+            //target the #para
+            paraText.innerHTML = "Hello World! This is in body.";
+
+            scoreText.innerHTML = score;
+
+            //add color
+            scoreText.style.color = "blue";
+
+            //font-size
+            scoreText.style.fontSize = "70px"
+
+            function increase(num) {
+                // console.log("Im Hit!!!");
+                score += num;
+
+                console.log(score);
+                document.getElementById("score").innerHTML = score;
+            }
+
+            function decrease(num) {
+                // console.log("Im Hit!!!");
+                score -= num;
+
+                console.log(score);
+                document.getElementById("score").innerHTML = score;
+            }
+
+            function count(num, color) {
+                score += num;
+
+                console.log(score);
+                scoreText.innerHTML = score;
+                scoreText.style.color = color;
+
+                hpBar.style.width = score + 'px'
+            }
+        </script>
+    </body>
+</html>
